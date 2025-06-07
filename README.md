@@ -48,9 +48,9 @@ Nossas criações são feitas com ingredientes de alta qualidade, técnicas arte
 
 ### 🖼️ Galeria
 
-![Tela1](/loojapublic/images/TelaRosa.png)
-![Tela2](/loojapublic/images/TelaAzul.png)
-![Tela3](/loojapublic/images/TelaLaranja.png)
+![Tela1](/looja/public/images/TelaRosa.png)
+![Tela2](/looja/public/images/TelaAzul.png)
+![Tela3](/looja/public/images/TelaLaranja.png)
 
 ## 🚀 Como Executar o Projeto
 
