@@ -40,7 +40,7 @@ Nossas criações são feitas com ingredientes de alta qualidade, técnicas arte
 
 ### 📁 Estrutura do Projeto
 
-![Diagrama de Rotas](https://via.placeholder.com/600x400/B7FFFA/563737?text=Diagrama+de+Rotas)  
+![Diagrama de Rotas](/looja/public/images/Rotas)  
 
 ### 🎥 Vídeo Demonstrativo
 
