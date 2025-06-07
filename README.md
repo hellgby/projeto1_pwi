@@ -44,7 +44,11 @@ Nossas criações são feitas com ingredientes de alta qualidade, técnicas arte
 
 ### 🎥 Vídeo Demonstrativo
 
-[![Clique para assistir]()]
+[![Clique para assistir](
+
+https://github.com/user-attachments/assets/d4c12107-60ee-435d-b1ef-80d3bce6ff4a
+
+)]
 
 ### 🖼️ Galeria
 
