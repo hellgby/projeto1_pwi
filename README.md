@@ -1,65 +1,65 @@
-# LS Pastry - Doces Artesanais 🍰  
+# LS Pastery - Doces artesanais 🍰  
 ![Banner da loja](/looja/public/images/Titulo.png)  
 
 ---
-## ✨ Sobre o Projeto
+## ✩ Sobre o projeto
 
-**LS Pastry – Delicie-se com a Doçura Feita com Amor!**  
-Bem-vindo à **LS Pastry**, a loja de doces onde cada sobremesa é uma celebração de sabores e texturas irresistíveis!  
+**LS Pastery – Delicie-se com a doçura feita com amor!**  
+Bem-vindo à **LS Pastery**, a loja de doces onde cada sobremesa é uma celebração de sabores e texturas irresistíveis!  
 Nossas criações são feitas com ingredientes de alta qualidade, técnicas artesanais e muito carinho, garantindo experiências únicas a cada mordida.
 
 ---
 
-## 🎂 Nossos Produtos
+## ✩ Nossos produtos
 
 | Produto                | Descrição                                                                 |
 |------------------------|---------------------------------------------------------------------------|
-| 🍩 Donuts Confeitados  | Massa fofinha e aerada, coberta com glacê e toppings incríveis!          |
-| 🥐 Croissants Recheados| Folhados dourados e crocantes, com recheios surpreendentes!              |
-| 🍞 Sonhos Tradicionais | Fofinhos, leves e derretem na boca!                                      |
+| 🍩 Donuts confeitados  | Massa fofinha e aerada, coberta com glacê e toppings incríveis!          |
+| 🥐 Croissants recheados| Folhados dourados e crocantes, com recheios surpreendentes!              |
+| 🍞 Sonhos tradicionais | Fofinhos, leves e derretem na boca!                                      |
 
 ---
 
-## 🌟 Diferenciais
+## ✩ Por que nos escolher?
 
-- ✨ Ambiente aconchegante e atendimento personalizado  
-- ✨ Opções veganas e sem glúten  
-- ✨ Encomendas especiais para eventos  
-
----
-
-## 📍 Informações
-
-**Localização:** Rua das Delícias, 123 – Centro, São Paulo/SP  
-**Horário:** Segunda a Sábado, das 9h às 20h  
-**Contato:** (11) 98765-4321 | [@lspastry]
+- ✧ Nosso ambiente é aconchegante e temos atendimento personalizado  
+- ✧ Temos opções veganas e sem glúten  
+- ✧ Fazemos encomendas especiais para eventos  
 
 ---
 
-## 🖼️ Design e Estrutura
+## ✩ Informações
 
-### 📁 Estrutura do Projeto
+**Localização:** Rua das Delícias, 1918 – Centro, Fortaleza/CE  
+**Horário:** Segunda a Sábado, das 8h às 18h  
+**Contato:** (85) 91111-2222 | [@lspastry]
 
-![Diagrama de Rotas](/looja/public/images/Rotas.png)  
+---
 
-### 🎥 Vídeo Demonstrativo
+## ✩ Design e estrutura
+
+### ✧ Estrutura do projeto
+
+![Diagrama de rotas](/looja/public/images/Rotas.png)  
+
+### ✧ Vídeo demonstrativo
 
 https://github.com/user-attachments/assets/d4c12107-60ee-435d-b1ef-80d3bce6ff4a
 
-### 🖼️ Galeria
+### ✧ Galeria
 
 ![Tela1](/looja/public/images/TelaRosa.png)
 ![Tela2](/looja/public/images/TelaAzul.png)
 ![Tela3](/looja/public/images/TelaLaranja.png)
 
-## 🚀 Como Executar o Projeto
+## ✩ Como posso executar o projeto?
 
-### ✅ Pré-requisitos
+### ✧ Pré-requisitos
 
 - Node.js (v14+)  
 - npm (v6+)
 
-### 📦 Instalação
+### ✧ Instalação
 
 - Site rodando em http://localhost:3001/
 
