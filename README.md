@@ -6,13 +6,14 @@
 
 **LS Pastery – Delicie-se com a doçura feita com amor!**  
 Bem-vindo à **LS Pastery**, a loja de doces onde cada sobremesa é uma celebração de sabores e texturas irresistíveis!  
-Nossas criações são feitas com ingredientes de alta qualidade, técnicas artesanais e muito carinho, garantindo experiências únicas a cada mordida.
+Nossas criações são feitas com ingredientes de alta qualidade, técnicas artesanais e muito carinho.
+Nosso site oferece os mais variados doces para alegrar sua boca!
 
 ---
 
-## ✩ Nossos produtos
+## ✩ O que oferecemos?
 
-| Produto                | Descrição                                                                 |
+| Produtos               | Descrição                                                                 |
 |------------------------|---------------------------------------------------------------------------|
 | 🍩 Donuts confeitados  | Massa fofinha e aerada, coberta com glacê e toppings incríveis!          |
 | 🥐 Croissants recheados| Folhados dourados e crocantes, com recheios surpreendentes!              |
@@ -30,15 +31,15 @@ Nossas criações são feitas com ingredientes de alta qualidade, técnicas arte
 
 ## ✩ Informações
 
-**Localização:** Rua das Delícias, 1918 – Centro, Fortaleza/CE  
+**Localização:** Rua das Leoas, 1918 – Boa Vista, Fortaleza/CE  
 **Horário:** Segunda a Sábado, das 8h às 18h  
-**Contato:** (85) 91111-2222 | [@lspastry]
+**Contato:** (85) 91918-1810 | [@lspastry]
 
 ---
 
-## ✩ Design e estrutura
+## ✩ Design e estrutura do projeto
 
-### ✧ Estrutura do projeto
+### ✧ Estrutura
 
 ![Diagrama de rotas](/looja/public/images/Rotas.png)  
 
@@ -46,7 +47,7 @@ Nossas criações são feitas com ingredientes de alta qualidade, técnicas arte
 
 https://github.com/user-attachments/assets/d4c12107-60ee-435d-b1ef-80d3bce6ff4a
 
-### ✧ Galeria
+### ✧ Screens
 
 ![Tela1](/looja/public/images/TelaRosa.png)
 ![Tela2](/looja/public/images/TelaAzul.png)
