@@ -1,0 +1,338 @@
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+legend {
+  color: #000;
+}
+
+h2 {
+  margin-top: 3vh;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: 110%;
+  line-height: 1.1;
+  font-family: helvetica, arial, sans-serif;
+}
+
+button {
+  width: auto;
+  overflow: visible;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+abbr,
+acronym {
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+pre,
+code {
+  font-family: "Courier New", monospace, serif;
+  font-size: 100%;
+  line-height: 1.2;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fff;
+  font: 1.3rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.cabecalho {
+  background: white;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.abas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3vh;
+}
+
+.aba {
+  width: 15rem;
+  margin: 0 4rem;
+  text-align: center;
+  line-height: 2;
+  text-decoration: none;
+  border-radius: 15px 15px 0 0;
+}
+
+.rosa {
+  background: #FA8597;
+  color: #563737;
+  font-family: 'Itim', cursive;
+}
+
+.azul {
+  background: #44bbf7;
+  color: #563737;
+  font-family: 'Itim', cursive;
+}
+
+.amarelo {
+  background: #FE964D;
+  color: #563737;
+  font-family: 'Itim', cursive;
+}
+
+.sessao {
+  text-align: center;
+}
+
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 4vh;
+  margin: 0 10% 0 10%;
+  padding-top: 4%;
+}
+
+.botao-info {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.fundo {
+  height: 100vh;
+}
+
+
+.pastry-section {
+  font-family: 'Itim', cursive;
+  background-color: white;
+  padding: 50px 20px;
+  color: #563737;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pastry-title {
+  color: #FA8597;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pastry-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.products-title {
+  color: #FE964D;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.product-item {
+  background-color: #B7FFFA;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.product-icon {
+  font-size: 1.8rem;
+  margin-right: 20px;
+  color: #FA8597;
+}
+
+.product-text {
+  flex: 1;
+}
+
+.differentials {
+  margin: 40px 0;
+}
+
+.diff-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.diff-icon {
+  color: #FE964D;
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.cta {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 40px 0;
+  color: #FA8597;
+}
+
+.contact-info {
+  background-color: rgba(183, 255, 250, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.contact-icon {
+  color: #FA8597;
+  font-size: 1.3rem;
+  margin-right: 15px;
+}
+
+.hashtags {
+  text-align: center;
+  color: #FE964D;
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .pastry-title {
+    font-size: 2rem;
+  }
+
+  .pastry-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+
+.card-produto {
+  width: 30%;
+  padding: 2%;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: white;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 100px 100px 0 0;
+}
+
+img {
+  width: 80%;
+}
+
+.info-produto h3 {
+  margin-top: 20px;
+  font-size: 1.3rem;
+}
+
+.info-produto p {
+  font-size: 1rem;
+  margin: 5px 0 20px 0;
+}
+
+.botao-preco {
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 25px;
+  color: #563737;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0px 4px 10px rgba(86, 55, 55, 0.25));
+}
+
+.botao-preco:hover {
+  transform: scale(1.05);
+  /* efeito de zoom ao passar o mouse */
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.cesta-botao {
+  position: fixed;
+  top: 85%;
+  /* opcional: centraliza verticalmente */
+  right: 30px;
+  /* encosta na extremidade direita */
+  width: 110px;
+  height: 110px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0px 4px 10px rgba(86, 55, 55, 0.25));
+}
+
+.cesta-botao img {
+  object-fit: contain;
+}
+
+.cesta-botao:hover {
+  transform: scale(1.1);
+  /* efeito de zoom ao passar o mouse */
+}
