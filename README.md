@@ -61,6 +61,8 @@ https://github.com/user-attachments/assets/d4c12107-60ee-435d-b1ef-80d3bce6ff4a
 
 ### 📦 Instalação
 
+- Site rodando em http://localhost:3001/
+
 ```bash
 git clone https://github.com/hellgby/ProjetoN1-Pwii251
 cd ProjetoN1-Pwii251
