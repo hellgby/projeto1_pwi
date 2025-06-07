@@ -19,8 +19,5 @@ router.get('/doces3', function(req, res) {
   res.render('doces3');
 });
 
-router.get('/info1', function(req, res) {
-  res.send('Informações sobre Doces 1');
-});
 
 module.exports = router;

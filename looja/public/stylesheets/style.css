@@ -89,14 +89,13 @@ body {
 .cabecalho {
   background: white;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .abas {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 3vh;
 }
 
 .aba {
@@ -275,6 +274,12 @@ body {
 
 img {
   width: 80%;
+}
+
+.titulo{
+  top: 5%;
+  width: 10rem;
+  height: auto;
 }
 
 .info-produto h3 {
