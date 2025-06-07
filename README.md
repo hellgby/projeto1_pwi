@@ -1,5 +1,5 @@
 # LS Pastry - Doces Artesanais 🍰  
-![Banner da loja](public/images/Titulo.png)  
+![Banner da loja](/looja/public/images/Titulo.png)  
 
 ---
 ## ✨ Sobre o Projeto
