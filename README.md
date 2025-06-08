@@ -42,6 +42,8 @@ Nosso site oferece os mais variados doces para alegrar sua boca!
 ### ✧ Estrutura
 
 ![Diagrama de rotas](/looja/public/images/Rotas.png)  
+![Diagrama de rotas](/looja/public/images/Projeto.png)  
+
 
 ### ✧ Vídeo demonstrativo
 
