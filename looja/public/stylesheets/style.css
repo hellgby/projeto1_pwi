@@ -121,7 +121,7 @@ body {
 }
 
 .azul {
-  background: #44bbf7;
+  background: #129be0;
   color: #563737;
   font-family: 'Itim', cursive;
 }
@@ -275,7 +275,6 @@ body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: white;
   margin: auto;
-  border: 2px solid white;
   border-radius: 100px 100px 0 0;
 }
 

@@ -3,47 +3,42 @@ const router = express.Router();
 const db = require('../database');
 const nodemailer = require('nodemailer');
 
-// Rota para página inicial (Croissants)
 router.get('/', (req, res) => {
-  db.all("SELECT * FROM doces1", (err, rows) => {
+  db.all("SELECT * FROM produtos WHERE categoria = 'croissant'", (err, rows) => {
     if (err) {
-      console.error("Erro ao buscar doces:", err);
-      return res.status(500).send("Erro ao carregar os doces");
+      console.error("Erro ao buscar croissants:", err);
+      return res.status(500).send("Erro ao carregar os croissants");
     }
     res.render('index', { doces: rows });
   });
 });
 
-// Rota para página doces2 (Donuts)
 router.get('/doces2', (req, res) => {
-  db.all("SELECT * FROM doces2", (err, rows) => {
+  db.all("SELECT * FROM produtos WHERE categoria = 'donut'", (err, rows) => {
     if (err) {
-      console.error("Erro ao buscar doces:", err);
-      return res.status(500).send("Erro ao carregar os doces");
+      console.error("Erro ao buscar donuts:", err);
+      return res.status(500).send("Erro ao carregar os donuts");
     }
     res.render('doces2', { doces: rows });
   });
 });
 
-// Rota para página doces3 (Sonhos)
 router.get('/doces3', (req, res) => {
-  db.all("SELECT * FROM doces3", (err, rows) => {
+  db.all("SELECT * FROM produtos WHERE categoria = 'sonho'", (err, rows) => {
     if (err) {
-      console.error("Erro ao buscar doces:", err);
-      return res.status(500).send("Erro ao carregar os doces");
+      console.error("Erro ao buscar sonhos:", err);
+      return res.status(500).send("Erro ao carregar os sonhos");
     }
     res.render('doces3', { doces: rows });
   });
 });
 
-// Rota para exibir o carrinho
 router.get('/carrinho', (req, res) => {
   const carrinho = req.session.carrinho || [];
   const total = carrinho.reduce((sum, item) => sum + item.valor * item.quantidade, 0);
   res.render('carrinho', { carrinho, total, enviado: false });
 });
 
-// Rota para adicionar item ao carrinho via POST
 router.post('/add-carrinho', (req, res) => {
   const { id, nome, valor, quantidade } = req.body;
 
@@ -51,8 +46,7 @@ router.post('/add-carrinho', (req, res) => {
     req.session.carrinho = [];
   }
 
-  // Agora compara id E nome para diferenciar doces com ids iguais mas nomes diferentes
-const existente = req.session.carrinho.find(item => item.nome == nome);
+  const existente = req.session.carrinho.find(item => item.nome === nome);
   if (existente) {
     existente.quantidade += parseInt(quantidade);
   } else {
@@ -67,10 +61,8 @@ const existente = req.session.carrinho.find(item => item.nome == nome);
   res.redirect('back');
 });
 
-
-// Rota para enviar orçamento por e-mail
 router.post('/enviar-orcamento', (req, res) => {
-  const { nome, email, itens, total } = req.body;
+  const { nome, email, itens, observ, total } = req.body;
 
   if (!nome || !email || !itens) {
     return res.status(400).send("Por favor, preencha todos os campos obrigatórios.");
@@ -83,59 +75,98 @@ router.post('/enviar-orcamento', (req, res) => {
     return res.status(400).send("Itens inválidos.");
   }
 
-  const corpoEmail = `
+  function enviarEmailOrcamento() {
+    const corpoEmail = `
 Novo pedido de orçamento:
 Nome: ${nome}
 Email do cliente: ${email}
+Observações ou alergias: ${observ}
 
 Itens:
 ${carrinho.map(i => `- ${i.nome} (x${i.quantidade}) - R$ ${(i.valor * i.quantidade).toFixed(2)}`).join('\n')}
 
 Total: R$ ${parseFloat(total).toFixed(2)}
-  `;
+    `;
 
-  // Configura o transporter com seu e-mail e senha de app
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'ana.candido09@aluno.ifce.edu.br',   // seu e-mail
-      pass: 'jvsgrvvqsevknvfa'                    // sua senha de app (sem espaços)
-    }
-  });
-
-  const mailOptions = {
-    from: 'ana.candido09@aluno.ifce.edu.br',     // sempre seu e-mail aqui
-    to: 'ana.candido09@aluno.ifce.edu.br',       // para você mesma
-    subject: 'Novo orçamento de cliente - LS Pastry',
-    text: corpoEmail
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Erro ao enviar email:', error);
-      return res.status(500).send('Erro ao enviar o orçamento.');
-    }
-
-    // Limpa o carrinho após envio
-    req.session.carrinho = [];
-
-    // Renderiza a página do carrinho com mensagem de sucesso
-    res.render('carrinho', {
-      carrinho: [],
-      total: 0,
-      enviado: true
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'ana.candido09@aluno.ifce.edu.br',
+        pass: 'jvsgrvvqsevknvfa'
+      }
     });
+
+    const mailOptions = {
+      from: 'ana.candido09@aluno.ifce.edu.br',
+      to: 'ana.candido09@aluno.ifce.edu.br',
+      subject: 'Novo orçamento de cliente - LS Pastry',
+      text: corpoEmail
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Erro ao enviar email:', error);
+        return res.status(500).send('Erro ao enviar o orçamento.');
+      }
+
+      req.session.carrinho = [];
+
+      res.render('carrinho', {
+        carrinho: [],
+        total: 0,
+        enviado: true
+      });
+    });
+  }
+
+  const sqlCheckCliente = "SELECT id FROM clientes WHERE email = ?";
+  db.get(sqlCheckCliente, [email], (err, row) => {
+    if (err) {
+      console.error("Erro ao buscar cliente:", err);
+      return res.status(500).send("Erro no servidor.");
+    }
+
+    if (!row) {
+      const sqlInsertCliente = "INSERT INTO clientes (nome, email) VALUES (?, ?)";
+      db.run(sqlInsertCliente, [nome, email], (err2) => {
+        if (err2) {
+          console.error("Erro ao inserir cliente:", err2);
+          return res.status(500).send("Erro ao salvar cliente.");
+        }
+        enviarEmailOrcamento();
+      });
+    } else {
+      enviarEmailOrcamento();
+    }
   });
 });
 
 router.post('/esvaziar-carrinho', (req, res) => {
-  console.log("Antes de zerar:", req.session.carrinho);
   req.session.carrinho = [];
-  console.log("Depois de zerar:", req.session.carrinho);
   res.redirect('/carrinho');
 });
 
+router.get('/debug/clientes', (req, res) => {
+  db.all("SELECT * FROM clientes", (err, rows) => {
+    if (err) {
+      console.error("Erro ao buscar clientes:", err);
+      return res.status(500).send("Erro ao buscar clientes");
+    }
+    console.log("Clientes no banco:", rows);
+    res.send("Dados dos clientes foram logados no console do servidor.");
+  });
+});
 
+router.get('/debug/produtos', (req, res) => {
+  db.all("SELECT * FROM produtos", (err, rows) => {
+    if (err) {
+      console.error("Erro ao buscar produtos:", err);
+      return res.status(500).send("Erro ao buscar produtos");
+    }
+    console.log("Produtos no banco:", rows);
+    res.send("Dados dos produtos foram logados no console do servidor.");
+  });
+});
 
 
 module.exports = router;

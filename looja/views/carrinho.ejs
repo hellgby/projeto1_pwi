@@ -13,7 +13,7 @@
         <h2>Seu Carrinho</h2>
 
         <% if (carrinho.length===0) { %>
-            <p>Seu carrinho está vazio 😢</p>
+            <p>Seu carrinho está vazio</p>
             <% } else { %>
                 <ul>
                     <% carrinho.forEach(item=> { %>
@@ -22,13 +22,12 @@
                                 <%= item.nome %>
                             </strong> — Quantidade: <%= item.quantidade %> —
                                 Preço: R$ <%= (item.valor * item.quantidade).toFixed(2).replace('.', ',' ) %>
-
                         </li>
                         <% }) %>
                 </ul>
                 <form class="total" action="/esvaziar-carrinho" method="POST">
                     <button type="submit"
-                        style=" background: crimson; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                        style=" background: rgb(249, 49, 89); color: white; border: none; border-radius: 6px; cursor: pointer;">
                         Esvaziar Carrinho
                     </button>
                 </form>
@@ -51,8 +50,13 @@
                             <label for="email">Seu e-mail:</label>
                             <input type="email" id="email" name="email" required>
 
+                            <label for="observ">Alergias ou observações:</label>
+                            <input type="text" id="text" name="observ" required>
+
                             <button type="submit">Enviar Orçamento</button>
                         </form>
+
+
                         <% } %>
                             <% } %>
 

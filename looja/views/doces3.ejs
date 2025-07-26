@@ -21,7 +21,9 @@
               <h3>
                 <%= doce.nome %>
               </h3>
-              <p><%= doce.texto %></p>
+              <p>
+                <%= doce.texto %>
+              </p>
 
               <form method="POST" action="/add-carrinho">
                 <input type="hidden" name="id" value="<%= doce.id %>">
