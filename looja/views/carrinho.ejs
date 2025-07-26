@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Seu Carrinho - LS Pastry</title>
+    <link rel="stylesheet" href="/stylesheets/carrinho.css">
+    <link rel="icon" type="image/png" href="/images/Icon.png">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Seu Carrinho</h2>
+
+        <% if (carrinho.length===0) { %>
+            <p>Seu carrinho está vazio 😢</p>
+            <% } else { %>
+                <ul>
+                    <% carrinho.forEach(item=> { %>
+                        <li>
+                            <strong>
+                                <%= item.nome %>
+                            </strong> — Quantidade: <%= item.quantidade %> —
+                                Preço: R$ <%= (item.valor * item.quantidade).toFixed(2).replace('.', ',' ) %>
+
+                        </li>
+                        <% }) %>
+                </ul>
+                <form class="total" action="/esvaziar-carrinho" method="POST">
+                    <button type="submit"
+                        style=" background: crimson; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                        Esvaziar Carrinho
+                    </button>
+                </form>
+                <p class="total">Total: R$ <%= total.toFixed(2).replace('.', ',' ) %>
+                </p>
+
+
+                <% if (enviado) { %>
+                    <div class="mensagem-sucesso">
+                        ✉️ Seu orçamento foi enviado com sucesso!
+                    </div>
+                    <% } else { %>
+                        <form class="info" action="/enviar-orcamento" method="POST">
+                            <input type="hidden" name="itens" value='<%= JSON.stringify(carrinho) %>'>
+                            <input type="hidden" name="total" value="<%= total.toFixed(2) %>">
+
+                            <label for="nome">Seu nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+
+                            <label for="email">Seu e-mail:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <button type="submit">Enviar Orçamento</button>
+                        </form>
+                        <% } %>
+                            <% } %>
+
+                                <a href="/" class="back-button">← Voltar e escolher mais doces</a>
+    </div>
+</body>
+
+</html>

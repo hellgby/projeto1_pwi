@@ -14,43 +14,28 @@
   <section class="sessao amarelo fundo">
     <%- include('partials/header') %>
       <div class="produtos">
-        <div class="card-produto">
-          <img src="/images/Sonho1.png">
-          <div class="info-produto">
-            <h3>Chocolate 70% Cacau</h3>
-            <p>Para os amantes de chocolate intenso.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 8,90">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 8,90</span>
-            </button>
+        <% doces.forEach(doce=> { %>
+          <div class="card-produto">
+            <img src="/images/<%= doce.foto %>" alt="<%= doce.nome %>">
+            <div class="info-produto">
+              <h3>
+                <%= doce.nome %>
+              </h3>
+              <p><%= doce.texto %></p>
+
+              <form method="POST" action="/add-carrinho">
+                <input type="hidden" name="id" value="<%= doce.id %>">
+                <input type="hidden" name="nome" value="<%= doce.nome %>">
+                <input type="hidden" name="valor" value="<%= doce.valor %>">
+                <input type="number" name="quantidade" value="1" min="1">
+                <button class="botao-preco" type="submit">
+                  <i class="fas fa-shopping-basket" aria-hidden="true"></i>
+                  <span>R$ <%= doce.valor.toFixed(2).replace('.', ',' ) %></span>
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-
-        <div class="card-produto">
-          <img src="/images/Sonho2.png">
-
-          <div class="info-produto">
-            <h3>Creme Branco</h3>
-            <p>Recheio delicado com toque de baunilha.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 7,90">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 7,90</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="card-produto">
-          <img src="/images/Sonho3.png">
-
-          <div class="info-produto">
-            <h3>Doce de leite</h3>
-            <p>Recheio cremoso com coco ralado.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 8,90">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 8,90</span>
-            </button>
-          </div>
-        </div>
+          <% }); %>
       </div>
   </section>
 </body>

@@ -5,7 +5,7 @@
   <title>LS Pastery - Donuts</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-      <link rel="icon" type="image/png" href="/images/Icon.png">
+  <link rel="icon" type="image/png" href="/images/Icon.png">
 
 </head>
 
@@ -13,44 +13,27 @@
   <section class="sessao azul fundo">
     <%- include('partials/header') %>
       <div class="produtos">
-        <div class="card-produto">
-          <img src="/images/Donut1.png">
-          <div class="info-produto">
-            <h3>Chocolate Belga com Granulado</h3>
-            <p>Donut mergulhado em chocolate premium e granulado crocante.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 9,90">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 9,90</span>
-            </button>
+        <% doces.forEach(doce=> { %>
+          <div class="card-produto">
+            <img src="/images/<%= doce.foto %>" alt="<%= doce.nome %>">
+            <div class="info-produto">
+              <h3>
+                <%= doce.nome %>
+              </h3>
+              <p><%= doce.texto %></p>
+              <form method="POST" action="/add-carrinho">
+                <input type="hidden" name="id" value="<%= doce.id %>">
+                <input type="hidden" name="nome" value="<%= doce.nome %>">
+                <input type="hidden" name="valor" value="<%= doce.valor %>">
+                <input type="number" name="quantidade" value="1" min="1">
+                <button class="botao-preco" type="submit">
+                  <i class="fas fa-shopping-basket" aria-hidden="true"></i>
+                  <span>R$ <%= doce.valor.toFixed(2).replace('.', ',' ) %></span>
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-
-        <div class="card-produto">
-          <img src="/images/Donut2.png">
-
-          <div class="info-produto">
-            <h3>Clássico Glacê de Baunilha</h3>
-            <p>Cobertura suave e leitosa, perfeito para quem ama o tradicional.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 8,50">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 8,50</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="card-produto">
-          <img src="/images/Donut3.png">
-
-          <div class="info-produto">
-            <h3>Clássico Açucarado</h3>
-            <p>Massa fofinha e suave de baunilha, coberto com açúcar mascavo.</p>
-            <button class="botao-preco" aria-label="Adicionar ao carrinho por R$ 9,50">
-              <i class="fas fa-shopping-basket" aria-hidden="true"></i>
-              <span> R$ 9,50</span>
-            </button>
-          </div>
-        </div>
-      </div>
+          <% }); %>
       </div>
   </section>
 </body>
