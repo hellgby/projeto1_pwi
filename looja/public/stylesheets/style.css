@@ -91,7 +91,11 @@ body {
   font-family: sans-serif;
   background-color: #fff;
   font: 1.3rem "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-y: scroll; /* Força a área de rolagem sempre, mesmo que não precise */
+  scrollbar-width: none; /* Firefox: esconde a barra */
+  -ms-overflow-style: none; 
 }
+
 
 .cabecalho {
   background: white;
@@ -134,6 +138,7 @@ body {
 
 .sessao {
   text-align: center;
+  transition-duration: 5s;
 }
 
 .produtos {
